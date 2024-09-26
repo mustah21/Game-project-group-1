@@ -5,4 +5,9 @@ def fetchw_airports():
     result = cursor.fetchall()
     return result
 
-def
+def fetch_goals():
+    sql = f"SELECT * FROM goal"
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute(sql)
+    result = cursor.fetchall()
+    return result
