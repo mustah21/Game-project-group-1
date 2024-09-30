@@ -20,19 +20,11 @@ def fetch_airports ():
     cursor= connection.cursor(dictionary=True)
     cursor.execute(sql)
     result = cursor.fetchall()
-    return result
+    return resul
 
 def fetch_targets():
-    sql = f"SELECT * FROM goal"
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute(sql)
-    result = cursor.fetchall()
-    return result
-
-
-def get_targets_info():
-    sql= "SELECT * FROM target"
-    cursor= connection.cursor(dictionary=True)
+    sql = f"SELECT * FROM target"
+    cursor = connection.cursor(dictionary=True)
     cursor.execute(sql)
     result = cursor.fetchall()
     return result
@@ -99,3 +91,5 @@ def update_location(icao, player_fuel, money, goal_id):
     sql = f'''UPDATE player SET current_airport_id = %s, fuel = %s, money = %s WHERE id = %s'''
     cursor = connection.cursor(dictionary=True)
     cursor.execute(sql, (icao, player_fuel, money,goal_id))
+
+
