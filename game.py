@@ -95,7 +95,7 @@ def airports_in_domain(icao_code,air_ports,player_fuel):
             in_domain_airports.append(air_port)
     return in_domain_airports
 
-def update_location(icao, player_range, money, goal_id):
-    sql = f'''UPDATE game SET location = %s, player_range = %s, money = %s WHERE id = %s'''
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute(sql, (icao, player_range, money,goal_id))
+def update_location(icao, player_fuel, money, goal_id):
+    sql = f'''UPDATE player SET current_airport_id = %s, fuel = %s, money = %s WHERE id = %s'''
+    cursor = connection.cursor(dictionary=True)
+    cursor.execute(sql, (icao, player_fuel, money,goal_id))
